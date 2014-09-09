@@ -25,7 +25,7 @@ import test.render.Gradient;
 public class SmoothMove extends JPanel implements MouseMotionListener
 {
 	
-	/**
+	/**This is just a test class for coming up with an algorithm for hiding and showing sprites based on criteria. In this case a 2d array of objects are shown/hidden in a circle around the mouse pointer
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -152,17 +152,12 @@ public class SmoothMove extends JPanel implements MouseMotionListener
 					if (Range.getDistance(level[w][h].getGraphics().getX(), level[w][h]
 							.getGraphics().getY(), mX, mY) < range)
 					{
-						// if (level[w][h].hasImage())
-						// {
 						offG.drawImage(level[w][h].getImage(), (int) level[w][h].getGraphics()
 								.getX(), (int) level[w][h].getGraphics().getY(), 16, 16, null);
-						
-						// } else
-						// {
+
 						offG.setColor(level[w][h].getColor());
 						offG.fillRect((int) level[w][h].getGraphics().x,
 								(int) level[w][h].getGraphics().y, 16, 16);
-						// }
 					}
 				}
 			}
@@ -183,21 +178,12 @@ public class SmoothMove extends JPanel implements MouseMotionListener
 				}
 			}
 		}
-		// Draw into the offscreen image.
 		paintOffscreen(mImage.getGraphics());
-		// // Put the offscreen image on the screen.
-		// BufferedImage bs = mImage.getSubimage(0, 100, 500, 40);
-		// AffineTransform tx = AffineTransform.getScaleInstance(1, -1);
-		// tx.translate(0, -bs.getHeight(null));
-		// AffineTransformOp op = new AffineTransformOp(tx,
-		// AffineTransformOp.TYPE_NEAREST_NEIGHBOR);
-		// bs = op.filter(bs, null);
 		
 		BufferedImage gradient = Gradient.createGradientImage(500, (int) 40, new Color(0, 84, 137,
 				0), new Color(0, 84, 137, 255));
 		
 		g.drawImage(mImage, 0, 0, null);
-		// g.drawImage(bs, 0, 140, null);
 		g.drawImage(gradient, 0, 140, null);
 		g.setColor(new Color(0, 84, 137, 255));
 		
@@ -213,10 +199,4 @@ public class SmoothMove extends JPanel implements MouseMotionListener
 		}
 	}
 	
-	public void paintOffscreen(Graphics g)
-	{
-		// int s = 100;
-		// g.setColor(Color.blue);
-		// g.fillRect(mX - s / 2, mY - s / 2, s, s);
-	}
 }
