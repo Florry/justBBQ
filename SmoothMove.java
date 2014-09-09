@@ -25,8 +25,8 @@ import test.render.Gradient;
 public class SmoothMove extends JPanel implements MouseMotionListener
 {
 	
-	/**This is just a test class for coming up with an algorithm for hiding and showing sprites based on criteria. In this case a 2d array of objects are shown/hidden in a circle around the mouse pointer
-	 * 
+	/**This is just a test class for coming up with an algorithm for hiding and showing sprites based on criteria. 
+	 * In this case a 2d array of objects are shown/hidden in a circle around the mouse pointer.
 	 */
 	private static final long serialVersionUID = 1L;
 	private static boolean useSearch = true;
